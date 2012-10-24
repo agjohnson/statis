@@ -1,0 +1,15 @@
+=head1 Statis
+
+Statis is a front end application to AnyEvent::Statis emitters. It runs an
+evented loop using Twiggy and uses PocketIO for a web socket implementation that
+passes event notifications to the web clients.
+
+=head1 Synopsis
+
+    plackup -s Twiggy app.psgi
+
+=head1 Author
+
+Anthony Johnson C<< aj@ohess.org >>
+
+=cut
