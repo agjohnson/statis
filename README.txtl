@@ -1,0 +1,18 @@
+h1. Statis
+
+Statis is a dashboard front end to AnyEvent::Statis emitters. It runs an
+evented loop using Twiggy and uses PocketIO for a web socket implementation that
+passes event notifications to the web clients.
+
+<img src='http://ohess.org/static/img/statis.png'/>
+
+h2. Synopsis
+
+<pre>
+plackup -s Twiggy app.psgi
+</pre>
+
+h2. Author
+
+Anthony Johnson aj@ohess.org
+
