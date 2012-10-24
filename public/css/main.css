@@ -1,0 +1,96 @@
+/* Icons */
+
+body {
+    margin: 1em;
+    font-family: serif;
+    font-size: 1em;
+    background: #f4f4f4;
+}
+
+/* Grid */
+#grid {
+    margin: 3em;
+    overflow: auto;
+}
+
+#grid > .state {
+    display: block;
+    float: left;
+    width: 1em;
+    height: 1em;
+    overflow: auto;
+}
+
+#grid > .state-pass {
+    background: -webkit-linear-gradient(top, #e4e4e4, #d4d4d4);
+    background: -moz-linear-gradient(top, #e4e4e4, #d4d4d4);
+    border: 1px solid #d4d4d4;
+}
+
+#grid > .state-warn {
+    background: -webkit-linear-gradient(top, #086394, #235068);
+    background: -moz-linear-gradient(top, #086394, #235068);
+    border: 1px solid #235068;
+}
+
+#grid > .state-fail {
+    background: -webkit-linear-gradient(top, #D1003C, #932c49);
+    background: -moz-linear-gradient(top, #D1003C, #932c49);
+    border: 1px solid #932c49;
+}
+
+/* States */
+#states .state .icon {
+    width: .8em;
+    float: left;
+    overflow: auto;
+    font-style: normal;
+    font-family: entypo;
+    font-size: 2em;
+    margin: -.33em .2em;
+    line-height: 1em;
+}
+
+.icon:before {
+    content: attr(icon);
+}
+
+#states {
+    margin: 3em;
+}
+
+#states .state, #states > div {
+    padding: 1em 0em 1em 1.6em;
+    margin: .6em 0em;
+    color: #444;
+    background: -webkit-linear-gradient(top, #ffffff, #f4f4f4);
+    background: -moz-linear-gradient(top, #ffffff, #f4f4f4);
+    font-family: 'Droid Sans', sans-serif;
+    text-shadow: #e4e4e4 1px 1px 1px;
+    border-radius: 3px;
+}
+
+#states .state-pass {
+    color: #221;
+    box-shadow:
+        inset 16px 0px 0px 0px #e4e4e4,
+        inset 17px 0px 0px 0px #d4d4d4,
+        0px 1px 4px 0px #e4e4e4;
+}
+
+#states .state-warn {
+    color: #086394;
+    box-shadow:
+        inset 16px 0px 0px 0px #086394,
+        inset 17px 0px 0px 0px #235068,
+        0px 1px 4px 0px #e0e0e0;
+}
+
+#states .state-fail {
+    color: #D1003C;
+    box-shadow:
+        inset 16px 0px 0px 0px #d1003c,
+        inset 17px 0px 0px 0px #932c49,
+        0px 1px 4px 0px #e0e0e0;
+}
+

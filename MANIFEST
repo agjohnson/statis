@@ -1,0 +1,26 @@
+app.psgi
+Build.PL
+lib/Statis/API.pm
+lib/Statis/App.pm
+lib/Statis/Backend.pm
+lib/Statis/Request.pm
+lib/Statis/Socket.pm
+lib/Statis/Static.pm
+lib/Statis/Util.pm
+MANIFEST			This list of files
+MANIFEST.SKIP
+public/css/fnt/entypo-webfont.eot
+public/css/fnt/entypo-webfont.svg
+public/css/fnt/entypo-webfont.ttf
+public/css/fnt/entypo-webfont.woff
+public/css/fnt/entypo.css
+public/css/main.css
+public/img/bg.png
+public/img/kermit.gif
+public/js/dashboard.js
+public/js/jquery-ui.min.js
+public/js/jquery.min.js
+public/js/socket.io.js
+t/001_base.t
+t/002_index_route.t
+view/index.html
