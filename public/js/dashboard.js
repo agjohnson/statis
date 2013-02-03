@@ -1,12 +1,23 @@
 /* Dashboard */
 
-var socket = io.connect();
+var socket = new SockJS('/event');
 
-socket.on('on_update', function (state) {
-    updateGrid(state);
-    updateState(state);
-    showKermit(state);
-});
+socket.onopen = function () {
+    console.log('open');
+}
+
+socket.onclose = function () {
+    console.log('close');
+}
+
+socket.onmessage = function (rep) {
+    state = JSON.parse(rep.data);
+    if (state.event == 'on_update') {
+        updateGrid(state);
+        updateState(state);
+        showKermit(state);
+    }
+};
 
 // Grid update
 function updateGrid(state) {

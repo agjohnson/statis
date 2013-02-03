@@ -11,7 +11,7 @@ use Statis::Socket;
 
 use Plack::Builder;
 use Plack::Middleware::Static;
-use PocketIO;
+use SockJS;
 use Cwd;
 use FindBin;
 
@@ -26,12 +26,9 @@ sub app {
             root => 'public/'
         );
 
-        mount '/socket.io/socket.io.js' =>
-          Plack::App::File->new(file => "$Path/public/js/socket.io.js");
-        mount '/socket.io' => PocketIO->new(
-            handler => \&Statis::Socket::event,
+        mount '/event' => SockJS->new(
+            handler => \&Statis::Socket::event
         );
-
         mount '/' => \&Statis::Backend::app;
     };
 }
