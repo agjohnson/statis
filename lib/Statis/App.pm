@@ -26,9 +26,19 @@ sub app {
             root => 'public/'
         );
 
-        mount '/event' => SockJS->new(
-            handler => \&Statis::Socket::event
-        );
+        mount '/event' => sub {
+            my $env = shift;
+            my $sck = SockJS->new(
+                handler => \&Statis::Socket::event
+            );
+            # Plackup sets SERVER_PROTOCOL = HTTP/1.1, Twiggy uses 1.0, but
+            # Plack::Middleware::Chunked checks the SERVER_PROTOCOL header for
+            # setting chunked return
+            return $sck->call({
+                %{$env},
+                SERVER_PROTOCOL => 'HTTP/1.0'
+            });
+        };
         mount '/' => \&Statis::Backend::app;
     };
 }
