@@ -15,7 +15,6 @@ socket.onmessage = function (rep) {
     if (state.event == 'on_update') {
         updateGrid(state);
         updateState(state);
-        showKermit(state);
     }
 };
 
@@ -70,27 +69,3 @@ function updateState(state) {
     }, 10000);
 
 }
-
-//Show Kermit
-function showKermit(state) {
-    if (state.value != 'fail') {
-        return;
-    }
-
-    var kermit = $('#kermit');
-    if (!kermit.length) {
-        kermit = new Image();
-        $(kermit).attr('id', 'kermit');
-        kermit.style.position = 'absolute';
-        kermit.style.top = '0px';
-        kermit.style.right = '0px';
-        $(kermit).attr('src', '/static/img/kermit.gif');
-        $('body').append(kermit);
-    }
-    $(kermit).fadeIn(200, function () {
-        setTimeout(function () {
-            $(kermit).fadeOut(200);
-        }, 3000);
-    });
-}
-
